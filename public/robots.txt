@@ -1,0 +1,29 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://jeromepogeant.com/sitemap.xml
+
+# Disallow admin or private areas (if you have any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Prevent crawling of development files
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.map$
+
+# Prevent crawling of temporary files
+Disallow: /*.tmp$
+Disallow: /*.temp$
+
+# Prevent crawling of system files
+Disallow: /.env
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /.vscode/
+
+# Crawl-delay for all bots
+Crawl-delay: 10

@@ -8,26 +8,26 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - TypeScript
 - Tailwind CSS
 - Vite
-- Pnpm
+- Bun
 
 ## 🏗️ Installation
 
 1. Install dependencies:
 
 ```console
-$ pnpm install
+$ bun install
 ```
 
 2. Start the development server:
 
 ```console
-$ pnpm dev
+$ bun dev
 ```
 
 #. Build for production:
 
 ```console
-$ pnpm build
+$ bun build
 ```
 
 ## 📝 License

@@ -1,11 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-type UseObserverOptions = {
-  threshold?: number
-  rootMargin?: string
-};
-
-const useObserver = (options: UseObserverOptions = {}) => {
+const useObserver = () => {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLElement | null>(null);
 
@@ -18,8 +13,8 @@ const useObserver = (options: UseObserverOptions = {}) => {
         }
       },
       {
-        threshold: options.threshold ?? 0.5,
-        rootMargin: options.rootMargin ?? '50px',
+        threshold: window.innerWidth < 768 ? 0.1 : 0.5,
+        rootMargin: window.innerWidth < 768 ? '50px' : '100px',
       },
     );
 
@@ -32,7 +27,7 @@ const useObserver = (options: UseObserverOptions = {}) => {
         observer.unobserve(elementRef.current);
       }
     };
-  }, [options.threshold, options.rootMargin]);
+  }, []);
 
   return { elementRef, isVisible };
 };

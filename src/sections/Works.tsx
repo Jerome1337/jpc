@@ -12,7 +12,7 @@ const Works: FC = () => {
     <section
       ref={elementRef}
       id="works"
-      className={`my-48 lg:my-64 opacity-0 ${isVisible ? 'animate-section-show' : ''}`}
+      className={`my-48 lg:my-64 opacity-0 ${isVisible ? 'animate-section-show' : ''} will-change-transform`}
     >
       <Title title="Mes Réalisations" emoji="✨" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6" role="list">
@@ -26,8 +26,8 @@ const Works: FC = () => {
               <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
                 {project.title}
               </h3>
-              {project.description.map((t) => (
-                <p className="text-gray-700 dark:text-gray-400 font-light my-6">
+              {project.description.map((t, i) => (
+                <p key={i} className="text-gray-700 dark:text-gray-400 font-light my-6">
                   {t}
                 </p>
               ))}

@@ -39,7 +39,7 @@ const Navigation: FC = () => {
               </a>
             ))}
           </div>
-          <div className="flex gap-x-8">
+          <div className="flex gap-x-4 lg:gap-x-8">
             <button
               onClick={toggleTheme}
               className="p-2 rounded-2xl bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-900

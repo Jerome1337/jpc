@@ -33,7 +33,7 @@
   --animate-wave: wave 5s ease-in-out infinite;
   --animate-infinite-scroll: infinite-scroll 100s linear infinite;
   --animate-fade-in: fade-in 0.3s ease-out forwards;
-  --animate-section-show: fade-section-show 0.7s ease-in-out forwards;
+  --animate-section-show: fade-section-show 0.8s ease-in-out forwards;
   --animate-fade-out: fade-out 0.3s ease-out backwards;
 
   @keyframes wave {

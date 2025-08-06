@@ -13,7 +13,7 @@ type SideMenuProps = {
 const SideMenu: FC<Readonly<SideMenuProps>> = ({ isOpen, setIsOpen }) => {
   const navigate = useCallback((event: MouseEvent<HTMLElement>, sectionId: string) => {
     handleSectionClick(event, sectionId);
-    setIsOpen(!isOpen);
+    setIsOpen(false);
   }, []);
 
   return (

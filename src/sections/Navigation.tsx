@@ -57,6 +57,7 @@ const Navigation: FC = () => {
                 )}
             </button>
             <button
+              type="button"
               onClick={(event) => {
                 handleSectionClick(event, 'contact');
               }}
@@ -67,6 +68,7 @@ const Navigation: FC = () => {
               Parlons de votre projet
             </button>
             <button
+              type="button"
               className="inline-flex items-center justify-center rounded-md text-gray-700
               dark:text-gray-200 cursor-pointer lg:hidden"
               onClick={() => setIsOpen(!isOpen)}

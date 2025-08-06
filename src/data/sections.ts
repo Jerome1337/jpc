@@ -4,6 +4,7 @@ type Section = {
 };
 
 const sections: Section[] = [
+  { name: 'Services', id: 'services' },
   { name: 'Mes réalisations', id: 'works' },
   // { name: 'Ils parlent de moi', id: 'testimonials' },
   { name: 'Compétences', id: 'competences' },

@@ -86,7 +86,7 @@ const Contact: FC = () => {
           </p>
           <a
             ref={bookCallRef}
-            href="https://calendly.com/pogeantjerome/30min"
+            href="https://calendly.com/pogeantjerome/20min"
             className="rounded-2xl bg-indigo-600 px-3.5 py-2.5 text-m font-semibold text-white
             hover:bg-indigo-500 focus-visible:outline-indigo-600 transition duration-300 ease-in-out
             dark:bg-indigo-500 dark:hover:bg-indigo-400"

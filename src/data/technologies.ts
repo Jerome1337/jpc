@@ -5,16 +5,16 @@ type Technology = {
 
 const technologies: Technology[] = [
   {
-    name: 'TypeScript',
-    icon: '/logos/ts.svg',
-  },
-  {
     name: 'React',
     icon: '/logos/react.svg',
   },
   {
     name: 'Next.js',
     icon: '/logos/nextjs.svg',
+  },
+  {
+    name: 'TypeScript',
+    icon: '/logos/ts.svg',
   },
   {
     name: 'Node.js',
@@ -25,24 +25,24 @@ const technologies: Technology[] = [
     icon: '/logos/fastify.svg',
   },
   {
-    name: 'Golang',
+    name: 'Go',
     icon: '/logos/golang.svg',
+  },
+  {
+    name: 'GCP',
+    icon: '/logos/gcp.svg',
   },
   {
     name: 'Docker',
     icon: '/logos/docker.webp',
   },
   {
-    name: 'PostgresSQL',
-    icon: '/logos/postgres.svg',
+    name: 'PostgreSQL',
+    icon: '/logos/postgre.svg',
   },
   {
     name: 'Redis',
     icon: '/logos/redis.svg',
-  },
-  {
-    name: 'GCP',
-    icon: '/logos/gcp.svg',
   },
   {
     name: 'Datadog',

@@ -29,7 +29,8 @@ const GoToTop: FC = () => {
       }
     >
       <button
-        className="rounded-2xl bg-indigo-600 px-3.5 py-2.5 text-m font-semibold text-white
+        type="button"
+        className="rounded-2xl bg-indigo-600 px-3.5 py-2.5 text-m font-semibold cursor-pointer text-white
           hover:bg-indigo-500 focus-visible:outline-indigo-600 transition duration-300 ease-in-out
           dark:bg-indigo-500 dark:hover:bg-indigo-400 shadow-lg"
         onClick={(event) => {

@@ -16,7 +16,7 @@ const Services: FC = () => {
 
       <div className="text-center mb-16">
         <p className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-          Solutions robustes livrées dans rapidement
+          Solutions robustes livrées rapidement
         </p>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-4xl mx-auto">
           Développements évolutifs qui réduisent vos coûts techniques long terme et améliorent performances business.

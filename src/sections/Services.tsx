@@ -10,7 +10,9 @@ const Services: FC = () => {
     <section
       id="services"
       ref={elementRef}
-      className={`my-48 lg:my-64 opacity-0 ${isVisible ? 'animate-section-show' : ''}`}
+      className={`my-48 lg:my-64 opacity-0 ${
+        isVisible ? 'animate-section-show' : ''
+      }`}
     >
       <Title title="Transformation Digitale" emoji="🚀" />
 
@@ -19,7 +21,8 @@ const Services: FC = () => {
           Solutions robustes livrées rapidement
         </p>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-4xl mx-auto">
-          Développements évolutifs qui réduisent vos coûts techniques long terme et améliorent performances business.
+          Développements évolutifs qui réduisent vos coûts techniques long terme
+          et améliorent performances business.
         </p>
       </div>
 
@@ -33,7 +36,8 @@ const Services: FC = () => {
             Architecture Cloud Native
           </h3>
           <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-            Solutions scalables sur GCP/Kubernetes ou serverless avec monitoring avancé et haute disponibilité
+            Solutions scalables sur GCP/Kubernetes ou serverless avec monitoring
+            avancé et haute disponibilité
           </p>
         </div>
 
@@ -45,7 +49,8 @@ const Services: FC = () => {
             Modernisation Legacy
           </h3>
           <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-            Migration progressive vers des applications web modernes, sans interruption de service
+            Migration progressive vers des applications web modernes, sans
+            interruption de service
           </p>
         </div>
 
@@ -57,7 +62,8 @@ const Services: FC = () => {
             Leadership Technique
           </h3>
           <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-            Standards techniques, compréhension métier, accompagnement au changement
+            Standards techniques, compréhension métier, accompagnement au
+            changement
           </p>
         </div>
       </div>
@@ -68,8 +74,8 @@ const Services: FC = () => {
           Prêt à transformer vos défis techniques ?
         </h3>
         <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
-          Échangeons sur votre projet d'application web scalable et définissons ensemble
-          l'application web adaptée à vos enjeux business.
+          Échangeons sur votre projet d'application web scalable et définissons
+          ensemble l'application web adaptée à vos enjeux business.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button

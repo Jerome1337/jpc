@@ -10,7 +10,9 @@ const Hero: FC = () => {
     <section
       id="hero"
       ref={elementRef}
-      className={`relative isolate h-dvh opacity-0 ${isVisible ? 'animate-section-show' : ''}`}
+      className={`relative isolate h-dvh opacity-0 ${
+        isVisible ? 'animate-section-show' : ''
+      }`}
     >
       <div
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl"
@@ -28,7 +30,10 @@ const Hero: FC = () => {
         <div className="flex flex-col gap-3 justify-center text-center">
           <p className="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200">
             Je suis Jérôme
-            <span className="animate-wave inline-block ml-4" aria-hidden="false">
+            <span
+              className="animate-wave inline-block ml-4"
+              aria-hidden="false"
+            >
               👋
             </span>
           </p>
@@ -56,8 +61,8 @@ const Hero: FC = () => {
             </span>
           </div>
           <p className="mb-4 md:mb-8 font-light text-pretty text-gray-500 dark:text-gray-400 sm:text-xl/8">
-            Je développe des applications web qui supportent votre croissance business
-            avec des plateformes applicatives qui perdurent.
+            Je développe des applications web qui supportent votre croissance
+            business avec des plateformes applicatives qui perdurent.
           </p>
           <div className="flex items-center justify-center gap-x-6">
             <button
@@ -86,7 +91,7 @@ const Hero: FC = () => {
           {' '}
           <div className="relative">
             <img
-              src="/profile-picture.jpeg"
+              src="/profile-picture.jpg"
               alt="Photo de profil"
               className="max-w-36 md:max-w-56 lg:max-w-xs rounded-full bg-gray-50 object-cover dark:bg-gray-800"
             />

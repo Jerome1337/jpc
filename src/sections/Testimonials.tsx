@@ -1,29 +1,28 @@
+'use client';
+
 import type { FC } from 'react';
 import testimonials from '../data/testimonials';
 import { User } from 'lucide-react';
 import Title from '../components/Title';
 import useObserver from '../hooks/useObserver';
+import Link from 'next/link';
 
 const Testimonials: FC = () => {
   const { elementRef, isVisible } = useObserver();
 
   return (
-    <section
-      id="testimonials"
-      ref={elementRef}
-      className="my-48 lg:my-64"
-    >
+    <section id="testimonials" ref={elementRef} className="my-48 lg:my-64">
       <Title title="Ils parlent de moi" emoji="📣" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {testimonials.map((testimonial, index) => (
           <div
             key={testimonial.id}
-            className={
-              `
-                bg-gray-100 dark:bg-gray-800 rounded-4xl p-6 opacity-0 ${isVisible ? 'animate-section-show' : ''}
+            className={`
+                bg-gray-100 dark:bg-gray-800 rounded-4xl p-6 opacity-0 ${
+          isVisible ? 'animate-section-show' : ''
+          }
                 animation-delay-${index}
-              `
-            }
+              `}
           >
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 mr-4 bg-indigo-100 dark:bg-indigo-900 rounded-full flex justify-center items-center">
@@ -37,7 +36,6 @@ const Testimonials: FC = () => {
                   {testimonial.role}
                   {' '}
                   -
-                  {' '}
                   {testimonial.company}
                 </p>
               </div>
@@ -48,7 +46,7 @@ const Testimonials: FC = () => {
               "
             </blockquote>
             {testimonial.linkedinUrl && (
-              <a
+              <Link
                 href={testimonial.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -60,7 +58,7 @@ const Testimonials: FC = () => {
                   src="/logos/linkedin.svg"
                   alt="Logo de LinkedIn"
                 />
-              </a>
+              </Link>
             )}
           </div>
         ))}

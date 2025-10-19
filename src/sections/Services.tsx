@@ -1,7 +1,9 @@
+'use client';
+
 import type { FC } from 'react';
-import { handleSectionClick } from '../utils';
 import Title from '../components/Title';
 import useObserver from '../hooks/useObserver';
+import Link from 'next/link';
 
 const Services: FC = () => {
   const { elementRef, isVisible } = useObserver();
@@ -78,25 +80,23 @@ const Services: FC = () => {
           ensemble l'application web adaptée à vos enjeux business.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
+          <Link
             type="button"
-            onClick={(event) => {
-              handleSectionClick(event, 'contact');
-            }}
+            href="/#contact"
             className="rounded-2xl bg-indigo-600 px-6 py-3 text-base font-semibold cursor-pointer text-white shadow-xs
                     hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2
                     focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400 transition-colors"
           >
             Discutons de votre projet
-          </button>
-          <a
+          </Link>
+          <Link
             href="https://calendly.com/pogeantjerome/20min"
             target="_blank"
             rel="noopener noreferrer"
             className="text-base font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 transition-colors"
           >
             Réserver un rendez-vous
-          </a>
+          </Link>
         </div>
       </div>
     </section>

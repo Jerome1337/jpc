@@ -1,5 +1,6 @@
+'use client';
+
 import { useEffect, useState, type FC } from 'react';
-import { handleSectionClick } from '../utils';
 import { ArrowUp } from 'lucide-react';
 
 const GoToTop: FC = () => {
@@ -10,7 +11,8 @@ const GoToTop: FC = () => {
       const scrollTop = window.scrollY;
       const documentHeight = document.documentElement.scrollHeight;
       const windowHeight = window.innerHeight;
-      const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+      const scrollPercentage
+        = (scrollTop / (documentHeight - windowHeight)) * 100;
 
       setShowScrollButton(scrollPercentage > 50);
     };
@@ -24,18 +26,16 @@ const GoToTop: FC = () => {
 
   return (
     <div
-      className={
-        `fixed bottom-4 right-4 z-50 opacity-0 ${showScrollButton ? 'block animate-fade-in' : 'animate-fade-out'}`
-      }
+      className={`fixed bottom-4 right-4 z-50 opacity-0 ${
+        showScrollButton ? 'block animate-fade-in' : 'animate-fade-out'
+      }`}
     >
       <button
         type="button"
         className="rounded-2xl bg-indigo-600 px-3.5 py-2.5 text-m font-semibold cursor-pointer text-white
           hover:bg-indigo-500 focus-visible:outline-indigo-600 transition duration-300 ease-in-out
           dark:bg-indigo-500 dark:hover:bg-indigo-400 shadow-lg"
-        onClick={(event) => {
-          handleSectionClick(event, 'hero');
-        }}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         aria-label="Retour en haut de page"
       >
         <ArrowUp />

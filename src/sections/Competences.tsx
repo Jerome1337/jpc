@@ -1,3 +1,5 @@
+'use client';
+
 import type { FC } from 'react';
 import technologies from '../data/technologies';
 import Title from '../components/Title';
@@ -10,15 +12,20 @@ const Competences: FC = () => {
     <section
       id="competences"
       ref={elementRef}
-      className={`my-48 lg:my-64 opacity-0 ${isVisible ? 'animate-section-show' : ''}`}
+      className={`my-48 lg:my-64 opacity-0 ${
+        isVisible ? 'animate-section-show' : ''
+      }`}
       aria-labelledby="competences-heading"
     >
       <div>
-        <Title id="competences-heading" title="Expertise Grands Comptes" emoji="🏢" />
+        <Title
+          id="competences-heading"
+          title="Expertise Grands Comptes"
+          emoji="🏢"
+        />
         <p className="font-light lg:mx-24 mb-18 text-center text-gray-600 dark:text-gray-400 text-xl">
-          Applications web scalables qui réduisent vos coûts techniques long terme
-          {' '}
-          et améliorent vos performances business.
+          Applications web scalables qui réduisent vos coûts techniques long
+          terme et améliorent vos performances business.
         </p>
 
         {/* Expertise Cards */}
@@ -89,7 +96,8 @@ const Competences: FC = () => {
         role="region"
       >
         <div className="sr-only">
-          Cette section présente un défilement automatique des technologies que je maîtrise.
+          Cette section présente un défilement automatique des technologies que
+          je maîtrise.
         </div>
         {[0, 1, 2].map((key) => (
           <ul

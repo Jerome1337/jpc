@@ -6,7 +6,7 @@ import { globalIgnores } from 'eslint/config';
 export default [
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
-  globalIgnores(['dist/*']),
+  globalIgnores(['dist/*', '.next/*', './next-env.d.ts']),
   {
     plugins: {
       '@stylistic': stylistic,
@@ -47,15 +47,19 @@ export default [
           ignoreStrings: false,
           ignoreTemplateLiterals: false,
           ignoreRegExpLiterals: true,
-          ignorePattern: 'className=["\']([\\s\\S]*?)["\']',
+          ignorePattern: "className=[\"']([\\s\\S]*?)[\"']",
         },
       ],
 
       // Add JSX-specific text wrapping rules
-      '@stylistic/jsx-max-props-per-line': ['error', { maximum: 1, when: 'multiline' }],
+      '@stylistic/jsx-max-props-per-line': [
+        'error',
+        { maximum: 1, when: 'multiline' },
+      ],
       '@stylistic/jsx-first-prop-new-line': ['error', 'multiline'],
       '@stylistic/jsx-wrap-multilines': [
-        'error', {
+        'error',
+        {
           declaration: 'parens-new-line',
           assignment: 'parens-new-line',
           return: 'parens-new-line',
@@ -70,9 +74,13 @@ export default [
 
       // Rules that help with automatic line breaks
       '@stylistic/operator-linebreak': ['error', 'before'],
-      '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 2 }],
+      '@stylistic/newline-per-chained-call': [
+        'error',
+        { ignoreChainWithDepth: 2 },
+      ],
       '@stylistic/object-curly-newline': [
-        'error', {
+        'error',
+        {
           multiline: true,
           consistent: true,
         },

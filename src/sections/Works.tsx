@@ -1,3 +1,5 @@
+'use client';
+
 import type { FC } from 'react';
 import projects from '../data/projects';
 import { Lightbulb } from 'lucide-react';
@@ -12,7 +14,9 @@ const Works: FC = () => {
     <section
       ref={elementRef}
       id="works"
-      className={`my-48 lg:my-64 opacity-0 ${isVisible ? 'animate-section-show' : ''} will-change-transform`}
+      className={`my-48 lg:my-64 opacity-0 ${
+        isVisible ? 'animate-section-show' : ''
+      } will-change-transform`}
     >
       <Title title="Mes Réalisations" emoji="✨" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6" role="list">
@@ -27,7 +31,10 @@ const Works: FC = () => {
                 {project.title}
               </h3>
               {project.description.map((t, i) => (
-                <p key={i} className="text-gray-700 dark:text-gray-400 font-light my-6">
+                <p
+                  key={i}
+                  className="text-gray-700 dark:text-gray-400 font-light my-6"
+                >
                   {t}
                 </p>
               ))}
@@ -52,13 +59,17 @@ const Works: FC = () => {
             className="bg-indigo-100 dark:bg-indigo-900 p-6 rounded-full w-20 h-20 flex justify-center items-center"
             aria-hidden="true"
           >
-            <Lightbulb size={40} className="stroke-indigo-800 dark:stroke-indigo-300" />
+            <Lightbulb
+              size={40}
+              className="stroke-indigo-800 dark:stroke-indigo-300"
+            />
           </div>
           <p className="font-semibold text-xl text-center text-gray-800 dark:text-gray-100">
             Un projet, un question ?
           </p>
           <p className="font-light md:max-w-lg lg:max-w-1/2 text-xl text-center text-gray-700 dark:text-gray-400">
-            N'hésitez pas à me contacter afin qu'on échange ensemble sur vos besoins. 🤩
+            N'hésitez pas à me contacter afin qu'on échange ensemble sur vos
+            besoins. 🤩
           </p>
         </div>
       </div>

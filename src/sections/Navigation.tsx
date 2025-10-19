@@ -1,42 +1,47 @@
+'use client';
+
 import { useState } from 'react';
 import type { FC } from 'react';
 
 import sections from '../data/sections';
-import { handleSectionClick } from '../utils';
 import { Menu, Moon, Sun } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import SideMenu from './SideMenu';
+import Link from 'next/link';
 
 const Navigation: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { isDark, toggleTheme } = useTheme();
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
+    <header className="absolute inset-x-0 top-0 z-50 bg-white/20 dark:bg-gray-900/20 backdrop-blur-md">
       <nav
         className="mx-auto max-w-7xl flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex">
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link href="/#" className="-m-1.5 p-1.5">
             <span className="sr-only">
               Jérôme Pogeant | Développeur Web Indépendant
             </span>
-            <img className="h-10 w-auto" src="/icon.svg" alt="Pictogramme du logo" />
-          </a>
+            <img
+              className="h-10 w-auto"
+              src="/icon.svg"
+              alt="Pictogramme du logo"
+            />
+          </Link>
         </div>
         <div className="flex items-center gap-x-8">
           <div className="hidden lg:flex gap-x-8">
-            {sections.map(({ id, name }) => (
-              <a
-                key={id}
-                href={id}
+            {sections.map(({ path, name }) => (
+              <Link
+                key={path}
+                href={path}
                 className="flex flex-col justify-center text-sm/6 font-semibold text-gray-900 dark:text-gray-200
                   hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer transition-colors"
-                onClick={(event) => handleSectionClick(event, id)}
               >
                 {name}
-              </a>
+              </Link>
             ))}
           </div>
           <div className="flex gap-x-4 lg:gap-x-8">
@@ -56,17 +61,15 @@ const Navigation: FC = () => {
                   <Moon className="h-5 w-5" />
                 )}
             </button>
-            <button
+            <Link
               type="button"
-              onClick={(event) => {
-                handleSectionClick(event, 'contact');
-              }}
+              href="/#contact"
               className="rounded-2xl bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white
               hover:bg-indigo-500 focus-visible:outline-indigo-600 transition duration-300 ease-in-out
               dark:bg-indigo-500 dark:hover:bg-indigo-400 cursor-pointer"
             >
               Parlons de votre projet
-            </button>
+            </Link>
             <button
               type="button"
               className="inline-flex items-center justify-center rounded-md text-gray-700

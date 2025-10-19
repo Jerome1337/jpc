@@ -1,16 +1,25 @@
+'use client';
+
 import type { FC } from 'react';
 import sections from '../data/sections';
-import { handleSectionClick } from '../utils';
 import socials from '../data/socials';
 import SocialButton from '../components/SocialButton';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 const Footer: FC = () => {
+  const pathname = usePathname();
+
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-50 dark:bg-gray-800 w-full px-8 py-20" role="contentinfo" aria-label="Pied de page">
+    <footer
+      className="bg-gray-50 dark:bg-gray-800 w-full px-8 py-20"
+      role="contentinfo"
+      aria-label="Pied de page"
+    >
       <div className="mx-auto max-w-7xl flex flex-col justify-between gap-8 md:items-center md:flex-row">
-        <a href="#" aria-label="Retour en haut de la page">
+        <Link href="#" aria-label="Retour en haut de la page">
           <img
             src="/logo.svg"
             alt="Logo Jérôme Pogeant"
@@ -25,26 +34,28 @@ const Footer: FC = () => {
             width="208"
             height="52"
           />
-        </a>
+        </Link>
 
         <nav aria-label="Navigation du pied de page">
           <ul className="flex flex-col md:flex-row gap-4 font-light">
             {sections.map((section) => (
               <li key={section.name}>
-                <a
-                  href={`#${section.id}`}
-                  onClick={(event) => handleSectionClick(event, section.id)}
+                <Link
+                  href={section.path}
                   className="cursor-pointer font-mono text-sm text-gray-900 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
-                  aria-current={window.location.hash === `#${section.id}` ? 'page' : undefined}
+                  aria-current={pathname === section.path ? 'page' : undefined}
                 >
                   {section.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
       </div>
-      <div aria-hidden="true" className="max-w-7xl block border-t-1 mx-auto my-12 border-gray-200 dark:border-gray-700" />
+      <div
+        aria-hidden="true"
+        className="max-w-7xl block border-t-1 mx-auto my-12 border-gray-200 dark:border-gray-700"
+      />
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col md:flex-row justify-between align-middle gap-6 md:gap-0">
           <div className="flex justify-center gap-4">
@@ -54,7 +65,11 @@ const Footer: FC = () => {
             <ul className="flex gap-4">
               {socials.map((social) => (
                 <li key={social.name}>
-                  <SocialButton url={social.url} name={social.name} icon={social.icon} />
+                  <SocialButton
+                    url={social.url}
+                    name={social.name}
+                    icon={social.icon}
+                  />
                 </li>
               ))}
             </ul>

@@ -4,4 +4,11 @@ dist
 .vscode/*
 !.vscode/extensions.json
 .DS_Store
+
+# vercel
+.vercel
+.next
+
+# typescript
 *.tsbuildinfo
+next-env.d.ts

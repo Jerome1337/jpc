@@ -1,14 +1,15 @@
 type Section = {
-  id: string
+  path: string
   name: string
 };
 
 const sections: Section[] = [
-  { name: 'Services', id: 'services' },
-  { name: 'Mes réalisations', id: 'works' },
-  // { name: 'Ils parlent de moi', id: 'testimonials' },
-  { name: 'Compétences', id: 'competences' },
-  { name: 'Contact', id: 'contact' },
+  { name: 'Services', path: '/#services' },
+  { name: 'Mes réalisations', path: '/#works' },
+  // { name: 'Ils parlent de moi', path: '/#testimonials' },
+  { name: 'Compétences', path: '/#competences' },
+  { name: 'Contact', path: '/#contact' },
+  { name: 'Blog', path: '/blog' },
 ];
 
 export default sections;

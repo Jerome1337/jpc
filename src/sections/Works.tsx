@@ -21,10 +21,11 @@ const Works: FC = () => {
       <Title title="Mes Réalisations" emoji="✨" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6" role="list">
         {projects.map((project) => {
-          return (
+          const card = (
             <div
-              key={project.title}
-              className="rounded-4xl bg-gray-100 dark:bg-gray-800 p-6"
+              className={`h-full rounded-4xl bg-gray-100 dark:bg-gray-800 p-6 ${
+                project.link ? 'cursor-pointer transition-transform' : ''
+              }`}
               role="listitem"
             >
               <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
@@ -50,9 +51,27 @@ const Works: FC = () => {
               </div>
             </div>
           );
+
+          return project.link
+            ? (
+              <a
+                key={project.title}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full"
+              >
+                {card}
+              </a>
+            )
+            : (
+              <div key={project.title} className="h-full">
+                {card}
+              </div>
+            );
         })}
         <div
-          className="rounded-4xl bg-gray-100 dark:bg-gray-800 p-6 flex flex-col gap-6 justify-center items-center"
+          className="col-span-full rounded-4xl bg-gray-100 dark:bg-gray-800 p-6 flex flex-col gap-6 justify-center items-center"
           role="listitem"
         >
           <div

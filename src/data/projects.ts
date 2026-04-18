@@ -2,6 +2,7 @@ type Project = {
   title: string
   description: string[]
   technologies: string[]
+  link?: string
 };
 
 const projects: Project[] = [
@@ -96,6 +97,29 @@ avec transparence totale sur leurs infrastructures hébergées.`,
       'PostgreSQL',
       'Monitoring',
     ],
+  },
+  {
+    title: "Lomely - L'Agent Immobilier qui ne dort jamais",
+    description: [
+      `Conception et développement d'une plateforme SaaS propulsée par l'IA pour révolutionner
+la recherche immobilière en France. L'utilisateur crée son profil en 5 minutes ; Lomely surveille
+95% du marché en continu (Leboncoin, SeLoger, PAP, Logic-Immo…) et envoie uniquement les biens
+correspondant vraiment à ses critères.`,
+      `Architecture Next.js 16 App Router, agent IA Claude (Anthropic) via MCP pour l'analyse
+et notation des annonces, paiements one-time Stripe, notifications email automatisées.
+Lancée début 2026 avec 80+ early adopters — de 10h de recherche hebdomadaire à 5 minutes.`,
+    ],
+    technologies: [
+      'Next.js',
+      'TypeScript',
+      'Anthropic Claude',
+      'MCP',
+      'PostgreSQL',
+      'Drizzle ORM',
+      'Stripe',
+      'SaaS',
+    ],
+    link: 'https://lomely.fr',
   },
 ];
 

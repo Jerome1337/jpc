@@ -1,0 +1,42 @@
+# Ignore everything by default, then whitelist build-relevant files
+*
+
+# Keep dockerignore itself
+!/.dockerignore
+
+# Keep project metadata and lockfiles
+!/package.json
+!/bun.lockb
+
+# Keep TypeScript / Next / build config
+!/tsconfig.json
+!/next.config.ts
+!/postcss.config.mjs
+
+# Keep source and public assets needed to build
+!/src/
+!/src/**
+!/public/
+!/public/**
+
+# Keep README
+!/README.md
+
+# Re-ignore common large/unwanted items (they were globally ignored by '*',
+# but re-listed to be explicit and readable)
+node_modules
+.next
+out
+dist
+.turbo
+build
+
+# Environment files (exclude secrets)
+.env
+
+# Editor / OS
+.DS_Store
+.vscode
+
+# Git
+.git

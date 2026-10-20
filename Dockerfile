@@ -1,10 +1,6 @@
-FROM node:lts-bullseye-slim AS base
+FROM node:lts-slim AS base
 WORKDIR /app
-RUN apt-get update \
-	&& apt-get install -y curl ca-certificates unzip \
-	&& rm -rf /var/lib/apt/lists/*
-RUN curl -fsSL https://bun.sh/install | bash
-ENV PATH="/root/.bun/bin:${PATH}"
+COPY --from=oven/bun:1.3 /usr/local/bin/bun /usr/local/bin/bun
 
 FROM base AS deps
 WORKDIR /app
